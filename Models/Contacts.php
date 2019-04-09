@@ -76,4 +76,15 @@ class Contacts extends Model
 		$sql->execute();
 
 	}
+
+	public function delete($id) {
+		$sql = "DELETE FROM contacts WHERE id = :id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+	}
+
+
+
 }

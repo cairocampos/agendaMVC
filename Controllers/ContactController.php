@@ -55,4 +55,17 @@ class ContactController extends Controller
 		}
 	}
 
+	public function delete($id) {
+		if (empty($id)) {
+			header("Location: ".BASE_URL);
+			exit;
+		}
+		
+		$c = new Contacts();
+		$c->delete($id);
+		header("Location: ".BASE_URL);
+		exit;	
+
+	}
+
 }

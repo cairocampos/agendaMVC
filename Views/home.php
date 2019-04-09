@@ -1,6 +1,6 @@
 <h1 class="mt-3">Minha Agenda</h1>
 <div id="link-add">
-	<a href="<?php echo BASE_URL; ?>contact/insert" class="newcontact">New <img src="<?php echo BASE_URL;?>icons/icon-plus.png" width="20" height="20" alt=""></a>
+	<a href="<?php echo BASE_URL; ?>contact/insert" class="action newcontact">New <img src="<?php echo BASE_URL;?>icons/icon-plus.png" width="20" height="20" alt=""></a>
 </div>
 <hr>
 <table class="table table-light table-hover">
@@ -19,7 +19,7 @@
 					<td><?php echo $item["name"]; ?></td>
 					<td><?php echo $item["email"]; ?></td>
 					<td style="display: flex; justify-content: space-around;">
-						<a href="<?php echo BASE_URL ?>contact/edit/<?php echo $item['id']; ?>"><img src="<?php echo BASE_URL; ?>icons/edit.png" width="30" height="30" alt=""></a>
+						<a class="action" href="<?php echo BASE_URL ?>contact/edit/<?php echo $item['id']; ?>"><img src="<?php echo BASE_URL; ?>icons/edit.png" width="30" height="30" alt=""></a>
 						<a href="<?php echo BASE_URL ?>contact/delete/<?php echo $item['id']; ?>"><img src="<?php echo BASE_URL; ?>icons/delete-button.png" width="30" height="30" alt=""></a>
 					</td>
 				</tr>

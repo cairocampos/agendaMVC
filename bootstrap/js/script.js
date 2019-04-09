@@ -1,5 +1,5 @@
 $(function(){
-	$('a').bind("click", function(e){
+	$('a.action').bind("click", function(e){
 		e.preventDefault();
 		var link = $(this).attr('href');
 		
