@@ -22,6 +22,7 @@ class Core
 
 			if (!empty($url)) {
 				$currentAction = $url[0];
+				array_shift($url);
 			} else {
 				$currentAction = "index";
 			}

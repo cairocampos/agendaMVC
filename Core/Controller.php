@@ -4,7 +4,7 @@ namespace Core;
 class Controller
 {
 	public function loadView($viewName, $viewData) {
-		Extract($viewData);
+		extract($viewData);
 		require "Views/".$viewName.".php";
 	}
 
@@ -13,7 +13,7 @@ class Controller
 	}
 
 	public function loadViewInTemplate($viewName, $viewData) {
-		Extract($viewData);
+		extract($viewData);
 		require "Views/".$viewName.".php";
 	}
 }

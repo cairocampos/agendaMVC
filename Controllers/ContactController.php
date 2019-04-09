@@ -4,7 +4,7 @@ namespace Controllers;
 use \Core\Controller;
 use \Models\Contacts;
 
-class ContactController extends controller
+class ContactController extends Controller
 {
 	public function index(){}
 
@@ -27,4 +27,32 @@ class ContactController extends controller
 		
 		header("Location: ".BASE_URL);
 	}
+
+	public function edit($id) {
+		$data = array();
+
+		if (empty($id)) {
+			header("Location: ".BASE_URL);
+			exit;
+		}
+		$c = new Contacts();
+		$data["info"] = $c->getContact($id);
+
+		$this->loadView("edit", $data);
+	}
+
+	public function edit_submit(){
+		$c = new Contacts();
+
+		if (!empty($_POST["email"])) {
+			$id = addslashes($_POST['id']);
+			$name = addslashes($_POST["name"]);
+			$email = addslashes($_POST["email"]);
+
+			$c->edit($id, $name, $email);
+			header("Location: ".BASE_URL);
+			exit;
+		}
+	}
+
 }

@@ -19,6 +19,21 @@ class Contacts extends Model
 		return $array;
 	}
 
+	public function getContact($id) {
+		$sql = "SELECT * FROM contacts WHERE id = :id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id", $id);
+		$sql->execute();
+
+		$array = array();
+
+		if($sql->rowCount() > 0) {
+			$array = $sql->fetch();
+		}
+
+		return $array;
+	}
+
 	public function addContact($name, $email) {
 
 		if ($this->hasEmail($email) == false) {
@@ -48,6 +63,17 @@ class Contacts extends Model
 		} else {
 			return false;
 		}
+
+	}
+
+	public function edit($id, $name, $email) {
+
+		$sql = "UPDATE contacts SET name = :name, email = :email WHERE id = :id";
+		$sql = $this->db->prepare($sql);
+		$sql->bindValue(":id", $id);
+		$sql->bindValue(":name", $name);
+		$sql->bindValue(":email", $email);
+		$sql->execute();
 
 	}
 }

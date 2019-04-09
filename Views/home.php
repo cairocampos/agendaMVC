@@ -19,8 +19,8 @@
 					<td><?php echo $item["name"]; ?></td>
 					<td><?php echo $item["email"]; ?></td>
 					<td style="display: flex; justify-content: space-around;">
-						<a href=""><img src="<?php echo BASE_URL; ?>icons/edit.png" width="30" height="30" alt=""></a>
-						<a href=""><img src="<?php echo BASE_URL; ?>icons/delete-button.png" width="30" height="30" alt=""></a>
+						<a href="<?php echo BASE_URL ?>contact/edit/<?php echo $item['id']; ?>"><img src="<?php echo BASE_URL; ?>icons/edit.png" width="30" height="30" alt=""></a>
+						<a href="<?php echo BASE_URL ?>contact/delete/<?php echo $item['id']; ?>"><img src="<?php echo BASE_URL; ?>icons/delete-button.png" width="30" height="30" alt=""></a>
 					</td>
 				</tr>
 			</tbody>
