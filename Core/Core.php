@@ -15,7 +15,7 @@ class Core
 
 		if (!empty($url) && $url != "/") {
 
-			$url = explode("",$url);
+			$url = explode("/",$url);
 			array_shift($url);
 			$currentController = $url[0]."Controller";
 			array_shift($url);

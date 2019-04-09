@@ -1,0 +1,17 @@
+#link-add {
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+a.newcontact {
+	color: #000;
+	text-decoration: none;
+	border: 2px solid #666;
+	padding: 10px;
+	border-radius: 10px;
+	transition: all .8s ease;
+}
+a.newcontact:hover {
+	background-color: green;
+	color: #FFF;
+}
