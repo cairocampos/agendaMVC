@@ -12,8 +12,11 @@
 			<?php $this->loadViewInTemplate($viewName, $viewData); ?>		
 		</div>
 
+		<div id="sweetShow"></div>
+
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>bootstrap/js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<script type="text/javascript" src="<?php echo BASE_URL; ?>bootstrap/js/script.js"></script>
 	</body>
 </html>

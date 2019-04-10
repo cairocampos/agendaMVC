@@ -10,8 +10,12 @@ a.newcontact {
 	padding: 10px;
 	border-radius: 10px;
 	transition: all .8s ease;
+	margin-left: 10px;
 }
 a.newcontact:hover {
 	background-color: green;
 	color: #FFF;
+}
+.del {
+	cursor: pointer;
 }

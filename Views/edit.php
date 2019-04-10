@@ -1,6 +1,6 @@
 <h3>Editar <img src="<?php echo BASE_URL;?>icons/edit.png" width="30" height="30" alt=""></h3>
 
-<form action="<?php echo BASE_URL;?>contact/edit_submit" class="form" method="POST">
+<form action="<?php echo BASE_URL;?>home/edit_submit" class="form" method="POST">
 	<input type="hidden" name="id" value="<?php echo $info["id"]; ?>">
 	<div class="form-group">
 		<label for="name">Nome</label>

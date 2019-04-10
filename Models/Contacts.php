@@ -7,7 +7,7 @@ class Contacts extends Model
 {
 	public function getList() {
 
-		$sql = "SELECT * FROM contacts";
+		$sql = "SELECT * FROM contacts ORDER BY id DESC";
 		$sql = $this->db->query($sql);
 	
 		$array = array();
@@ -75,6 +75,7 @@ class Contacts extends Model
 		$sql->bindValue(":email", $email);
 		$sql->execute();
 
+		return true;
 	}
 
 	public function delete($id) {

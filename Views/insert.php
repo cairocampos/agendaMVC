@@ -1,6 +1,6 @@
 <h3><img src="<?=BASE_URL; ?>icons/user.png" width="35" height="35" alt=""> Novo Contato</h3>
 
-<form action="<?php echo BASE_URL;?>contact/addcontact" method="POST" class="form">
+<form action="<?php echo BASE_URL;?>" method="POST" class="form" id="formulario">
 	<div class="form-group">
 		<label for="name">Nome</label>
 		<input type="text" name="name" class="form-control" autocomplete="off" autofocus="">
