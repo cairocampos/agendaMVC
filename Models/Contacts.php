@@ -5,9 +5,9 @@ use \Core\Model;
 
 class Contacts extends Model
 {
-	public function getList() {
+	public function getList($offset, $limit) {
 
-		$sql = "SELECT * FROM contacts ORDER BY id DESC";
+		$sql = "SELECT * FROM contacts ORDER BY id DESC LIMIT $offset, $limit ";
 		$sql = $this->db->query($sql);
 	
 		$array = array();
@@ -17,6 +17,15 @@ class Contacts extends Model
 		}
 
 		return $array;
+	}
+
+	public function countRegisters(){
+
+		$sql = "SELECT COUNT(*) AS q FROM contacts";
+		$sql = $this->db->query($sql);
+		$sql = $sql->fetch();
+
+		return $sql['q'];
 	}
 
 	public function getContact($id) {

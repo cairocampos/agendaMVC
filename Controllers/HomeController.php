@@ -24,7 +24,19 @@ class HomeController extends Controller
 		}		
 
 		$c = new Contacts();
-		$data['items'] = $c->getList(); 
+		$offset = 0;
+		$limit = 5;
+		$data['total'] = $c->countRegisters();
+		$total = $data['total'];
+
+		$data['pages'] = ceil($total / $limit);
+		$newpage = 1;
+		if(!empty($_GET['p'])) {
+			$newpage = addslashes($_GET['p']);
+		}
+		$offset = ($newpage * $limit) - $limit;
+		$data['marker'] = $newpage;
+		$data['items'] = $c->getList($offset, $limit);
 
 		$this->loadTemplate("home", $data);
 	}

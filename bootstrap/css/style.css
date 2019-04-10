@@ -19,3 +19,11 @@ a.newcontact:hover {
 .del {
 	cursor: pointer;
 }
+.total {
+	background-color: #666;
+	color: #FFF;
+	height: 20px;
+	width: 20px;
+	padding: 3px;
+	border-radius: 50%;
+}

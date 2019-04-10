@@ -1,11 +1,13 @@
 <h1 class="mt-3"><img src="<?php echo BASE_URL; ?>icons/phone.png" width="50" height="50" alt=""> Minha Agenda</h1>
 <div id="link-add">
+	<div class="mr-auto" style="display: flex; align-items: center;">
+		<div><?php echo "Contatos: ".'<span class="total">'.$total.'</span>'; ?></div>
+	</div>
 	<a href="javascript:;" id="update" class="action newcontact"><img src="<?php echo BASE_URL;?>icons/refresh.png" width="20" height="20" alt=""></a>
 
 	<a href="<?php echo BASE_URL; ?>contact/insert" class="action newcontact">New <img src="<?php echo BASE_URL;?>icons/icon-plus.png" width="20" height="20" alt=""></a>
 </div>
 <hr>
-
 <?php if(isset($success)): ?>
 	<div class="alert alert-fade alert-success">
 		<button class="close" data-dismiss="alert">&times;</button>
@@ -45,7 +47,11 @@
 		</div>
 	<?php endif; ?>
 </table>
-
+<ul class="pagination">	
+<?php for($x=1;$x<=$pages;$x++): ?>
+	<li class="page-item <?php echo($marker == $x)?'active':'' ?>"><a href="<?php echo BASE_URL; ?>?p=<?php echo $x; ?>" class="page-link"><?php echo $x; ?></a></li>
+<?php endfor; ?>
+</ul>
 <!-- MODAL -->
 <div class="modal fade" id="modalshow">
 	<div class="modal-dialog" role="document">

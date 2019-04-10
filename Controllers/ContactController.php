@@ -21,4 +21,6 @@ class ContactController extends Controller
 		exit;	
 	}
 
+	
+	
 }
