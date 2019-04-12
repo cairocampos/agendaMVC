@@ -26,18 +26,18 @@ a.newcontact {
 	overflow: scroll;
 }
 
-#contact {
+.contact {
 	width: 100%;
 	border: 0 solid transparent;
 	border-bottom: 1px solid #DDD;
 	background-color: #EEE;
 	outline: none !important;
 }
-#contact:focus + .bar{	
+.contact:focus + .bar{	
 	transform: translateX(0);	
 }
 
-#contact-width {
+.contact-width {
 	overflow: hidden;
 }
 .bar {
@@ -46,4 +46,7 @@ a.newcontact {
 	background-color: #007bff;
 	transform: translateX(-100%); 
 	transition: all 1s ease;
+}
+.contact.ins {
+	background-color: #FFF;
 }

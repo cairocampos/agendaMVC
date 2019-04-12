@@ -24,8 +24,8 @@
 		<div class="col-1">
 			<img src="<?php echo BASE_URL; ?>icons/loupe.png" width="35" height="35" alt="">
 		</div>
-		<div class="col-6" id="contact-width">
-			<input type="text" name="contact" id="contact" placeholder="Pesquisar por um contato..." autocomplete="off">
+		<div class="col-6 contact-width">
+			<input type="text" name="contact" class="contact" placeholder="Pesquisar por um contato..." autocomplete="off">
 			<div class="bar"></div>
 		</div>
 	</div>
