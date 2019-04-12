@@ -5,6 +5,29 @@ use \Core\Model;
 
 class Contacts extends Model
 {
+	
+	public function filtro($filtro) {
+
+		if($filtro != '') {
+
+			$sql = "SELECT * FROM contacts WHERE name LIKE :filtro";
+			$sql = $this->db->prepare($sql);
+			$sql->bindValue(":filtro", $filtro.'%');
+			$sql->execute();
+		
+		} else {
+			$sql = "SELECT * FROM contacts";
+			$sql = $this->db->query($sql);
+		}
+
+		$array = array();
+
+		if ($sql->rowCount()>0){
+			$array = $sql->fetchAll();
+		}
+		return $array;
+	}
+
 	public function getList($offset, $limit) {
 
 		$sql = "SELECT * FROM contacts ORDER BY id DESC LIMIT $offset, $limit ";

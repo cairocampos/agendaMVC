@@ -11,34 +11,37 @@ class HomeController extends Controller
 
 		//Inserindo cadastro.
 		$c = new Contacts();
+
+		$data['registers'] = $c->countRegisters();
+
 		if (!empty($_POST['email'])) {
 			$name = $_POST['name'];
 			$email = $_POST['email'];	
 
 			if ($c->addContact($name, $email)) {
-			$data["success"] = "Inserido com sucesso";
+				$data["success"] = "Inserido com sucesso";
 		
 			} else {
 				$data["error"] = "Esse email já existe!";
 			}			
 		}		
 
-		$c = new Contacts();
-		$offset = 0;
-		$limit = 5;
-		$data['total'] = $c->countRegisters();
-		$total = $data['total'];
-
-		$data['pages'] = ceil($total / $limit);
-		$newpage = 1;
-		if(!empty($_GET['p'])) {
-			$newpage = addslashes($_GET['p']);
-		}
-		$offset = ($newpage * $limit) - $limit;
-		$data['marker'] = $newpage;
-		$data['items'] = $c->getList($offset, $limit);
-
 		$this->loadTemplate("home", $data);
+	}
+
+	public function ajaxFilter(){
+		$data = array();
+		$c = new Contacts();
+
+		$filtro = '';
+
+		if (!empty($_GET['name'])) {
+			$filtro = $_GET['name'];
+		} 
+
+		$ajax = $c->filtro($filtro);
+		echo json_encode($ajax);
+		
 	}
 
 	public function edit($id) {
@@ -67,8 +70,7 @@ class HomeController extends Controller
 			if ($c->edit($id, $name, $email)) {
 				header("Location: ".BASE_URL);
 				exit;
-			}
-			
+			}		
 			
 		}
 	}
